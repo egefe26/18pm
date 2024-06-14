@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Web Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quick Web Test</h1>
+        <form id="quizForm">
+            <div class="question" id="q1">
+                <p>1. Will you be hungry?</p>
+                <input type="radio" name="hungry" value="yes" onclick="showNext('q2_hungry')"> Yes<br>
+                <input type="radio" name="hungry" value="no" onclick="showNext('q2_not_hungry')"> No<br>
+            </div>
+
+            <div class="question" id="q2_hungry" style="display: none;">
+                <p>2. How far are you willing to walk?</p>
+                <input type="radio" name="walk_hungry" value="10" onclick="showNext('q3_yes_10')"> 10 minutes<br>
+                <input type="radio" name="walk_hungry" value="20" onclick="showNext('q3_yes_20')"> 20 minutes<br>
+            </div>
+
+            <div class="question" id="q2_not_hungry" style="display: none;">
+                <p>2. Coffee or Beer/Cocktail?</p>
+                <input type="radio" name="drink" value="coffee" onclick="showNext('q3_coffee')"> Coffee<br>
+                <input type="radio" name="drink" value="beer" onclick="showNext('q3_beer')"> Beer/Cocktail<br>
+            </div>
+
+            <div class="question" id="q3_coffee" style="display: none;">
+                <p>3. How far are you willing to walk?</p>
+                <input type="radio" name="walk_coffee" value="10" onclick="showNext('result_no_hungry_coffee_10')"> 10 minutes<br>
+                <input type="radio" name="walk_coffee" value="20" onclick="showNext('result_no_hungry_coffee_20')"> 20 minutes<br>
+            </div>
+
+            <div class="question" id="q3_beer" style="display: none;">
+                <p>3. How far are you willing to walk?</p>
+                <input type="radio" name="walk_beer" value="10" onclick="showNext('result_no_hungry_beer_10')"> 10 minutes<br>
+                <input type="radio" name="walk_beer" value="20" onclick="showNext('result_no_hungry_beer_20')"> 20 minutes<br>
+            </div>
+
+            <!-- Result sections -->
+            <div class="result" id="result_no_hungry_coffee_10" style="display: none;">
+                <p>Options:</p>
+                <p>1. Coffee place 1 (10 min walk)</p>
+                <p>2. Coffee place 2 (10 min walk)</p>
+            </div>
+
+            <div class="result" id="result_no_hungry_coffee_20" style="display: none;">
+                <p>Options:</p>
+                <p>1. Coffee place 1 (20 min walk)</p>
+                <p>2. Coffee place 2 (20 min walk)</p>
+            </div>
+
+            <div class="result" id="result_no_hungry_beer_10" style="display: none;">
+                <p>Options:</p>
+                <p>1. Beer/Cocktail place 1 (10 min walk)</p>
+                <p>2. Beer/Cocktail place 2 (10 min walk)</p>
+            </div>
+
+            <div class="result" id="result_no_hungry_beer_20" style="display: none;">
+                <p>Options:</p>
+                <p>1. Beer/Cocktail place 1 (20 min walk)</p>
+                <p>2. Beer/Cocktail place 2 (20 min walk)</p>
+            </div>
+
+            <div class="result" id="q3_yes_10" style="display: none;">
+                <p>Options:</p>
+                <p>1. Restaurant 1 (10 min walk)</p>
+            </div>
+
+            <div class="result" id="q3_yes_20" style="display: none;">
+                <p>Options:</p>
+                <p>1. Restaurant 1 (20 min walk)</p>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
